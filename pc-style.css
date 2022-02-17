@@ -1,0 +1,267 @@
+@charset "UTF-8";
+
+/* @media screen and (min-width: 767px) { */
+body {
+    font-family: 'Noto Sans JP', sans-serif;
+    line-height: 1.5;
+    color: #696969;
+}
+
+.section-wrap {
+    width: 960px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+
+.title {
+    font-size: 28px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    position: relative;
+    font-family: cursive;
+}
+
+
+/* header */
+.header {
+    width: 100%;
+    background-color: #87cefa;
+    height: 70px;
+}
+
+.header-list {
+    width: 960px;
+    margin: 0 auto;
+    padding-top: 20px;
+    display: flex;
+    font-size: 18px;
+}
+
+.header-item + .header-item {
+    margin-left: 15px;
+}
+
+/* introduction */
+.introduction-title {
+    font-size: 36px;
+    font-weight: bold;
+    text-align: center;
+    margin: 20px 0;
+    position: relative;
+}
+/* .introduction-title::before {
+    content: "SHE'S";
+    font-size: 37px;
+    font-weight: normal;
+    color: #00008b;
+    position: absolute;
+    bottom: -5%;
+    left: 44.7%;
+} */
+
+/*枠線が伸びて出現*/
+.line{
+    position: relative; /* 枠線が書かれる基点*/
+  }
+  
+  /*上下線*/
+  .line::before,
+  .line::after{
+    position: absolute;
+    content:"";
+    width:0;
+    height:2px;
+    background:#696969;/* 枠線の色*/
+  }
+  
+  /*左右線*/
+  .line2::before,
+  .line2::after{
+    position: absolute;
+    content:"";
+    width: 3px;
+    height:0;
+    background:#696969;/* 枠線の色*/
+  }
+  
+  /*上線*/
+  .line::before {
+      top:0;
+      left:42%;
+      animation: lineAnime .5s linear 0s forwards;/*表示されて0秒後に上線が0.5秒かけて表示*/
+  }
+  
+  /*右線*/
+  .line2::before{ 
+      top:0;
+      right:42%;
+      animation: lineAnime2 .5s linear .5s forwards;/*表示されて0.5秒後に右線が0.5秒かけて表示*/
+  }
+  
+  /*下線*/
+  .line::after { 
+      bottom:0;
+      right:42%;
+      animation: lineAnime .5s linear 1s forwards;/*表示されて1秒後に下線が0.5秒かけて表示*/
+  }
+  
+  /*左線*/
+  .line2::after{ 
+      bottom:0;
+      left:42%;
+      animation: lineAnime2 .5s linear 1.5s forwards;/*表示されて1.5秒後に左線が0.5秒かけて表示*/
+  }
+  
+  @keyframes lineAnime {
+      0% {width:0%;}
+      100%{width:16%;}
+  }
+  
+  @keyframes lineAnime2 {
+      0% {height:0%;}
+      100%{height:100%;}
+  }
+  
+  /*枠線内側の要素*/
+  .line .lineinappear{
+      animation: lineInnerAnime .5s linear 1.5s forwards;/*1.5秒後に中央のエリアが0.5秒かけて表示*/
+      opacity: 0;/*初期値を透過0にする*/ 
+  }
+  
+  @keyframes lineInnerAnime{
+      0% {opacity:0;}
+      100% {opacity:1;}
+  }
+
+.intro-contents {
+    margin-top: 10px;
+}
+
+/* 写真のループ */
+.introduction-img {
+    display: flex;
+    animation: loop-slide 20s infinite linear 1s both;
+}
+@keyframes loop-slide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+
+.img-hover {
+    transition: all 0.2s;
+}  
+.img-hover:hover {
+    transform: translateY(-20px);
+    cursor: pointer;
+}
+
+.introduction-wrap {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+}
+
+.introduction-img-item {
+    width: 300px;
+    margin-left: 20px;
+}
+
+/* Member */
+
+.title.__member::before {
+    content: "Member";
+    font-size: 22px;
+    letter-spacing: 7px;
+    font-weight: normal;
+    color: #87cefa;
+    position: absolute;
+    bottom: -8.5%;
+    left: -0.8%;
+}
+
+.member-inner {
+    display: flex;
+}
+
+.member-list {
+    width: 800px;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+
+.name {
+    font-size: 18px;
+    position: relative;
+}
+.name.__ryoma::before {
+    content: "Inoue Ryoma";
+    font-size: 10px;
+    color: #696969;
+    position: absolute;
+    bottom: 100%;
+    left: 1%;
+}
+.name.__kanta::before {
+    content: "Hattori Kanta";
+    font-size: 10px;
+    color: #696969;
+    position: absolute;
+    bottom: 100%;
+    left: 1%;
+}
+.name.__shingo::before {
+    content: "Hirose Shingo";
+    font-size: 10px;
+    color: #696969;
+    position: absolute;
+    bottom: 100%;
+    left: 1%;
+}
+.name.__kim::before {
+    content: "Kimura Masato";
+    font-size: 10px;
+    color: #696969;
+    position: absolute;
+    bottom: 100%;
+    left: 1%;
+}
+
+
+.member-img {
+    width: 110px;
+    margin-right: 10px;
+}
+
+/* music video */
+
+.title.__musicvideo::before {
+    content: "Music Video";
+    font-size: 22px;
+    font-weight: normal;
+    letter-spacing: 5px;
+    color: #87cefa;
+    position: absolute;
+    bottom: -8.5%;
+    left: -0.8%;
+}
+
+.music-list {
+    list-style-type: upper-roman;
+    width: 800px;
+    margin: 0 auto;
+}
+
+.music-item a {
+    font-size: 20px;
+}
+
+.music-item + .music-item {
+    margin-top: 5px;
+}
+
+
+/* } */
